@@ -4,11 +4,11 @@ Gem::Specification.new do |s|
   s.licenses    = ['MIT']
   s.summary     = 'OAuth2 Omniauth strategy for Xero.'
   s.description = 'OAuth2 Omniauth straetgy for Xero API.'
-  s.authors     = ['Jenks Guo']
-  s.email       = 'jenks.guo@xero.com'
-  s.homepage    = 'https://rubygems.org/gems/example'
-  s.metadata    = { 'source_code_uri' => 'https://github.com/xxxx/omniauth-xero-oauth2' }
-  s.files       = ['lib/omniauth-xero-oauth2.rb','lib/xero-oauth2/version.rb']
+  s.authors     = ['Xero API']
+  s.email       = 'api@xero.com'
+  s.homepage    = 'https://rubygems.org/gems/omniauth-xero-oauth2'
+  s.metadata    = { 'source_code_uri' => 'https://github.com/XeroAPI/xero-oauth2-omniauth-strategy' }
+  s.files       = ['lib/omniauth-xero-oauth2.rb','lib/xero-oauth2/version.rb','lib/omniauth/strategies/xero_oauth2.rb']
 
   s.add_dependency 'omniauth', '~>1.3'
   s.add_dependency 'omniauth-oauth2', '~>1.5'
