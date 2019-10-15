@@ -2,7 +2,11 @@
 
 ## Installation
 via RubyGem.org: 
-TO DO
+simply:
+```gem install 'omniauth-xero-oauth2'```
+
+in your **_Gemfile_** add:
+```gem 'omniauth-xero-oauth2```
 
 via local install:
 1. download or clone xero-ruby-oauth2, put it next to your rails app directory
