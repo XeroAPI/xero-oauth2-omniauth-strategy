@@ -44,8 +44,17 @@ module OmniAuth
       end
 
       def raw_info
-        decoded_info ||= JWT.decode access_token['id_token'], nil, false
-        @raw_info ||= decoded_info[0]
+        if @id_token == nil
+          @raw_info = {
+            'xero_userid'=> '',
+            'given_name' => '',
+            'family_name' => '',
+            'email' => '',
+          }
+        else
+          decoded_info ||= JWT.decode @id_token, nil, false
+          @raw_info ||= decoded_info[0]
+        end
       end
 
       def xero_tenants
