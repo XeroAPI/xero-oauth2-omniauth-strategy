@@ -44,7 +44,7 @@ module OmniAuth
       end
 
       def raw_info
-        if @id_token == nil
+        if access_token['id_token'] == nil
           @raw_info = {
             'xero_userid'=> '',
             'given_name' => '',
