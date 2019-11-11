@@ -52,7 +52,7 @@ module OmniAuth
             'email' => '',
           }
         else
-          decoded_info ||= JWT.decode @id_token, nil, false
+          decoded_info ||= JWT.decode id_token, nil, false
           @raw_info ||= decoded_info[0]
         end
       end
