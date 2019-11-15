@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'omniauth-xero-oauth2'
-  s.version     = '0.9.2'
+  s.version     = '0.9.3'
   s.licenses    = ['MIT']
   s.summary     = 'OAuth2 Omniauth strategy for Xero.'
   s.description = 'OAuth2 Omniauth straetgy for Xero API.'
