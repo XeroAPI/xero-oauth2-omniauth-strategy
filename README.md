@@ -17,7 +17,7 @@ via local install:
 ## Usage
 In the omniauth initializer file (e.g. config/initializers/omniauth.rb), add the following:
 
-```
+```rb
 ENV['xero_api_client_id'] = '5BF816xxxx'
 ENV['xero_api_client_secret'] = 'Hgji76MyN2xxxx'
 
@@ -26,7 +26,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
     :xero_oauth2,
     ENV['xero_api_client_id'],
     ENV['xero_api_client_secret'],
-    scope: 'openid profile email files accounting.transactions accounting.transactions.read accounting.reports.read accounting.journals.read accounting.settings accounting.settings.read accounting.contacts accounting.contacts.read accounting.attachments accounting.attachments.read offline_access',
+    scope: 'openid profile email files accounting.transactions accounting.transactions.read accounting.reports.read accounting.journals.read accounting.settings accounting.settings.read accounting.contacts accounting.contacts.read accounting.attachments accounting.attachments.read offline_access'
   )
 end
 
@@ -41,7 +41,7 @@ If you would like to change the default redirect_uri to a custom one, you will n
 
 A successful auth_hash looks like the below one. This follows the [Omniauth auth_hash schema](https://github.com/omniauth/omniauth/wiki/Auth-Hash-Schema).
 
-```
+```rb
 {"provider"=>:xero_oauth2,
  "uid"=>"ca038fba-29c3-xxxx-8f12-5b2a13cxxxx",
  "info"=>
