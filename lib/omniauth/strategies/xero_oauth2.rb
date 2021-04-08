@@ -29,7 +29,7 @@ module OmniAuth
 
       info do
         {
-          name: raw_info['given_name'] + ' ' + raw_info['family_name'],
+          name: [raw_info['given_name'], raw_info['family_name']].compact.join(' '),
           first_name: raw_info['given_name'],
           last_name: raw_info['family_name'],
           email: raw_info['email'],
