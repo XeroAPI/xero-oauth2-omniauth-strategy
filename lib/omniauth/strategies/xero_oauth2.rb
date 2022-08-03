@@ -6,6 +6,8 @@ module OmniAuth
     class XeroOauth2 < OmniAuth::Strategies::OAuth2
       option :name, :xero_oauth2
 
+      option :authorize_options, %i[login_hint state redirect_uri scope]
+
       option(
         :client_options,
         {
@@ -14,6 +16,14 @@ module OmniAuth
           token_url: 'https://identity.xero.com/connect/token',
         },
       )
+
+      def authorize_params
+        super.tap do |params|
+          options[:authorize_options].each do |k|
+            params[k] = request.params[k.to_s] unless [nil, ''].include?(request.params[k.to_s])
+          end
+        end
+      end
 
       def callback_url
         options[:redirect_uri] || (full_host + script_name + callback_path)
