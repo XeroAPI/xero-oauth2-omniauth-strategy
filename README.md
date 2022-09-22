@@ -1,5 +1,7 @@
 # omniauth-ruby-oauth2
 
+[Sample app](https://github.com/XeroAPI/xero-oauth2-omniauth-sample) for testing this gem
+
 ## Installation
 via RubyGem.org: 
 simply:
