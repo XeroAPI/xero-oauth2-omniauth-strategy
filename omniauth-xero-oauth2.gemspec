@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.metadata    = { 'source_code_uri' => 'https://github.com/XeroAPI/xero-oauth2-omniauth-strategy' }
   s.files       = ['lib/omniauth-xero-oauth2.rb','lib/xero-oauth2/version.rb','lib/omniauth/strategies/xero_oauth2.rb']
 
-  s.add_dependency 'omniauth', '~> 2.0.0'
+  s.add_dependency 'omniauth', '>= 2.0.0', '< 2.2.0'
   s.add_dependency 'omniauth-oauth2', '~> 1.7.1'
 
   s.add_development_dependency 'rspec', '~> 3.6'
