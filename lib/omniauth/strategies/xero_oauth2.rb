@@ -14,6 +14,7 @@ module OmniAuth
           site: 'https://api.xero.com/api.xro/2.0',
           authorize_url: 'https://login.xero.com/identity/connect/authorize',
           token_url: 'https://identity.xero.com/connect/token',
+          connections_url: 'https://api.xero.com/connections',
         },
       )
 
@@ -68,7 +69,10 @@ module OmniAuth
       end
 
       def xero_tenants
-        @xero_tenants ||= JSON.parse(access_token.get("https://api.xero.com/connections", {'Authorization'=>('Bearer ' + access_token.token),'Accept'=>'application/json'}).body)
+        clientOptions = options[:client_options]
+        connectionsUrl = clientOptions[:connections_url]
+        response = access_token.get(connectionsUrl, {'Authorization'=>('Bearer ' + access_token.token),'Accept'=>'application/json'}).body
+        @xero_tenants ||= JSON.parse(response)
       end
     end
   end
